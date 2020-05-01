@@ -6,7 +6,9 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "apollo-boost": "^0.1.22",
@@ -21,9 +23,11 @@
     "react": "16.5.0",
     "react-apollo": "^2.3.2",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
-    "react-navigation": "^2.18.2"
+    "react-navigation": "^2.18.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"
-  }
+  },
+  "snyk": true
 }
