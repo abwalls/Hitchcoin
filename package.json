@@ -11,7 +11,7 @@
   "dependencies": {
     "apollo-boost": "^0.1.22",
     "aws-amplify": "^1.1.9",
-    "aws-amplify-react-native": "^2.0.8",
+    "aws-amplify-react-native": "^3.2.1",
     "aws-appsync": "^1.4.0",
     "aws-appsync-react": "^1.2.0",
     "aws-sdk": "^2.354.0",
