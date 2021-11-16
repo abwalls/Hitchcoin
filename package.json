@@ -14,7 +14,7 @@
     "aws-amplify-react-native": "^2.0.8",
     "aws-appsync": "^1.4.0",
     "aws-appsync-react": "^1.2.0",
-    "aws-sdk": "^2.354.0",
+    "aws-sdk": "^2.814.0",
     "expo": "^31.0.2",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
