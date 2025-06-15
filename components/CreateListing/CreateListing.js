@@ -73,9 +73,6 @@ constructor(props) {
          Location: this.state.pickup,
          userID: "Cognito-ID",
          Destination: this.state.dropoff
-         /*Location: this.state.pickup,
-          userID: this.state.userID,
-          Destination: this.state.dropoff*/
         }
       }
     });
