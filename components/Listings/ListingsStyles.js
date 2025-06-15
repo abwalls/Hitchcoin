@@ -1,64 +1,63 @@
-const React = require('react-native');
-const { Dimensions, StyleSheet } = React;
+import { Dimensions, StyleSheet } from "react-native";
 
-module.exports = StyleSheet.create({
+export default StyleSheet.create({
   signup_container: {
     flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'space-between',
+    backgroundColor: "#fff",
+    justifyContent: "space-between",
   },
   signup_form_container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
   signup_banner_text: {
-    width: Dimensions.get('window').width,
+    width: Dimensions.get("window").width,
     height: 40,
     fontSize: 20,
-    color: '#000',
-    fontWeight: 'bold',
+    color: "#000",
+    fontWeight: "bold",
     letterSpacing: 10,
-    textAlign: 'center'
+    textAlign: "center",
   },
   pickup_input: {
     width: 200,
     height: 30,
-    borderColor: 'gray',
+    borderColor: "gray",
     borderBottomWidth: 1,
     marginTop: 15,
     marginBottom: 15,
-    textAlign: 'left',
-    fontSize: 10
+    textAlign: "left",
+    fontSize: 10,
   },
   signup_actions_container: {
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "flex-end",
   },
   login_button: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     color: "lightgrey",
     width: 200,
     margin: 10,
     height: 20,
     fontSize: 10,
-    textAlign: 'center',
-    textAlignVertical: 'center',
-    marginBottom: 10
+    textAlign: "center",
+    textAlignVertical: "center",
+    marginBottom: 10,
   },
   signup_button: {
-    backgroundColor: '#C4DE9F',
-    width: Dimensions.get('window').width,
+    backgroundColor: "#C4DE9F",
+    width: Dimensions.get("window").width,
     height: 80,
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: "center",
+    justifyContent: "center",
   },
   signup_text: {
-    color: '#000',
+    color: "#000",
     fontSize: 24,
-    fontWeight: '600',
-    letterSpacing: 10
+    fontWeight: "600",
+    letterSpacing: 10,
   },
 });
