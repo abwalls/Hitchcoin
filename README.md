@@ -2,9 +2,16 @@
 Ridesharing application built in the AWS cloud using React Native for Android/iOS support (Work In Progress)
 
 Configuring Application with your AWS cloud resources
-Several sections of the code have been removed that are used to configure the application to specific AWS resources such as user pools and dynamoDB.  Using the AWS console you can auto generate your own aws-exports.js file and link it to the application or you can manually configure sections in the code in the following sections:
-  1) In the App.js file you will need to enter your identity and user pool id's and well as region starting at line 25
-  2) Each of the componets except Analytics and Menu have .js files that will need to be overwritten with your specfic AWS    resource information as denoted in the code by '---YOUR AWS RESOURCE INFO HERE---'
+Several sections of the code have been removed that are used to configure the application to specific AWS resources such as user pools and DynamoDB. Using the AWS console you can auto generate your own `aws-exports.js` file and link it to the application or you can manually configure sections in the code in the following sections:
+
+To generate the `aws-exports.js` file with the Amplify CLI:
+1. Install the CLI with `npm install -g @aws-amplify/cli`.
+2. Run `amplify configure` to connect the CLI to your AWS account.
+3. From the project root execute `amplify init` and then `amplify push`.
+This will create an `aws-exports.js` file in the root of the repository.
+
+  1) In `App.js` fill in your Cognito identity pool ID, user pool ID, web client ID and region starting at line 25.
+  2) Each component, except Analytics and Menu, contains placeholders marked `---YOUR AWS RESOURCE INFO HERE---`. Replace these with the IDs for your AppSync API, S3 buckets and other services created in your AWS account.
 There may be some issues configuring your specifc AWS resources with the application due to different regions, permissions, and configurations, but overall this code is meant to be a rough example of how to work set up a cross platform mobile application using React Native and AWS resources. Services used include: AppSync, Cognito, dynamoDB, Lambda, GraphQL API, S3, and more so it can be a good starting point for building a similarly stuctured application. The node_modules directory was far to large in size even when compressed to be posted on here but I will add a link to it on another file hosting service shortly for those who are interested otherwise message me for it if you are interested.
   
 Installation Guide
@@ -14,7 +21,7 @@ Download the Expo Client Application (Android Marketplace: https://play.google.c
 You will need a computer on the same Network as the phone with Node.js and Python installed to install the Expo Client which can be done directly in the terminal with the ‘npm install -g expo-cli’ command.
 Download the Hitchcoin application from GitHub or other source
 In the terminal navigate to the Hitchcoin app directory you have just downloaded. 
-Run command ‘expo-start’ which will begin building the JavaScript bundle
+Run command ‘expo start’ which will begin building the JavaScript bundle
 Once prompted, press ‘e’ to send a link from the terminal to your mobile device
 Click the first link provided in message (exp://…) and then choose ‘Open in Expo’ which should establish a connection between the machine hosting the application and the mobile device 
 Wait for JavaScript Bundle to Download test out some of the application’s basic features
