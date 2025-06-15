@@ -29,23 +29,24 @@ import { graphql } from 'react-apollo';
 
 //Auth
 import Auth from '@aws-amplify/auth';
+import { IDENTITY_POOL_ID, AWS_REGION, USER_POOL_ID, USER_POOL_WEB_CLIENT_ID, GRAPHQL_ENDPOINT, APOLLO_CLIENT_URI } from '@env';
 
 Auth.configure({
         // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-        identityPoolId: '---YOUR IDENTITY POOL ID GOES HERE---',  
+        identityPoolId: IDENTITY_POOL_ID,
         // REQUIRED - Amazon Cognito Region
-        region: '---YOUR REGION GOES HERE---',
+        region: AWS_REGION,
         // OPTIONAL - Amazon Cognito User Pool ID
-        userPoolId: '---YOUR USER POOL ID GOES HERE---',
+        userPoolId: USER_POOL_ID,
         // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-        userPoolWebClientId: 'USER POOL WEB CLIENT ID',
+        userPoolWebClientId: USER_POOL_WEB_CLIENT_ID,
         // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
         mandatorySignIn: true,      
 });
 
 Amplify.configure({
   API: {
-    graphql_endpoint: '---YOUR GRAPHQL ENDPOINT GOES HERE---'
+    graphql_endpoint: GRAPHQL_ENDPOINT
   }
 });
 
@@ -61,7 +62,7 @@ const client = new AWSAppSyncClient({
 });
 
 const apolloClient = new ApolloClient({
-  uri: '---YOUR APOLLO CLIENT URI GOES HERE---'
+  uri: APOLLO_CLIENT_URI
 });
 
 

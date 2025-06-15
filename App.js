@@ -2,6 +2,7 @@ import React from 'react';
 import { Linking, Button, StyleSheet, Text, View } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import { withAuthenticator } from 'aws-amplify-react-native'
+import { IDENTITY_POOL_ID, AWS_REGION, USER_POOL_ID, USER_POOL_WEB_CLIENT_ID } from '@env';
 import Analytics from '@aws-amplify/analytics';
 import Amplify, { API } from "aws-amplify";
 import { createSwitchNavigator } from 'react-navigation';
@@ -24,13 +25,13 @@ import awsconfig from './aws-exports';
 Analytics.configure(awsconfig);
 Auth.configure({
         // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-        identityPoolId: 'YOUR IDENTITY POOL ID GOES HERE',  
+        identityPoolId: IDENTITY_POOL_ID,
         // REQUIRED - Amazon Cognito Region
-        region: 'REGION GOES HERE',
+        region: AWS_REGION,
         // OPTIONAL - Amazon Cognito User Pool ID
-        userPoolId: 'YOUR USER POOL ID GOES HERE',
+        userPoolId: USER_POOL_ID,
         // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-        userPoolWebClientId: 'YOUR USER POOL WEB CLIENT ID GOES HERE',
+        userPoolWebClientId: USER_POOL_WEB_CLIENT_ID,
         // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
         mandatorySignIn: true,      
 });

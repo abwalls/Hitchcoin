@@ -3,9 +3,25 @@ Ridesharing application built in the AWS cloud using React Native for Android/iO
 
 Configuring Application with your AWS cloud resources
 Several sections of the code have been removed that are used to configure the application to specific AWS resources such as user pools and dynamoDB.  Using the AWS console you can auto generate your own aws-exports.js file and link it to the application or you can manually configure sections in the code in the following sections:
-  1) In the App.js file you will need to enter your identity and user pool id's and well as region starting at line 25
-  2) Each of the componets except Analytics and Menu have .js files that will need to be overwritten with your specfic AWS    resource information as denoted in the code by '---YOUR AWS RESOURCE INFO HERE---'
+  1) Environment specific values are now read from a `.env` file using `react-native-dotenv`. Copy `.env.example` to `.env` and fill in your AWS values.
+  2) Each of the components except Analytics and Menu require valid AWS resource information which should be provided via environment variables.
 There may be some issues configuring your specifc AWS resources with the application due to different regions, permissions, and configurations, but overall this code is meant to be a rough example of how to work set up a cross platform mobile application using React Native and AWS resources. Services used include: AppSync, Cognito, dynamoDB, Lambda, GraphQL API, S3, and more so it can be a good starting point for building a similarly stuctured application. The node_modules directory was far to large in size even when compressed to be posted on here but I will add a link to it on another file hosting service shortly for those who are interested otherwise message me for it if you are interested.
+
+### Required Environment Variables
+
+Create a `.env` file based on `.env.example` and provide values for the following keys:
+
+```
+IDENTITY_POOL_ID=
+AWS_REGION=
+USER_POOL_ID=
+USER_POOL_WEB_CLIENT_ID=
+GRAPHQL_ENDPOINT=
+APOLLO_CLIENT_URI=
+APPSYNC_URL=
+APPSYNC_REGION=
+BUCKET_ARN=
+```
   
 Installation Guide
 The best way to run it is by using the Expo Client Application which can be done by following these steps:

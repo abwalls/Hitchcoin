@@ -20,16 +20,17 @@ import AWSAppSyncClient from "aws-appsync";
 
 //Auth
 import Auth from '@aws-amplify/auth';
+import { IDENTITY_POOL_ID, AWS_REGION, USER_POOL_ID, USER_POOL_WEB_CLIENT_ID, APPSYNC_URL, APPSYNC_REGION } from '@env';
 
 Auth.configure({
         // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-        identityPoolId: '---YOUR IDENTITY POOL ID GOES HERE---',  
+        identityPoolId: IDENTITY_POOL_ID,
         // REQUIRED - Amazon Cognito Region
-        region: '---YOUR AWS REGION GOES HERE---',
+        region: AWS_REGION,
         // OPTIONAL - Amazon Cognito User Pool ID
-        userPoolId: '---YOUR USER POOL ID GOES HERE---7',
+        userPoolId: USER_POOL_ID,
         // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-        userPoolWebClientId: 'USER POOL WEB CLIENT ID GOES HERE',
+        userPoolWebClientId: USER_POOL_WEB_CLIENT_ID,
         // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
         mandatorySignIn: true,      
 });
@@ -42,8 +43,8 @@ Amplify.configure({
 
 //Configure AppSync
 const client = new AWSAppSyncClient({
-    url: "---YOUR APP SYNC URL GOES HERE---",
-    region: "---YOUR APPSYNC REGION GOES HERE---",
+    url: APPSYNC_URL,
+    region: APPSYNC_REGION,
     auth: {
          //Cognito User Pools using AWS Amplify
          type: AUTH_TYPE.AMAZON_COGNITO_USER_POOLS,

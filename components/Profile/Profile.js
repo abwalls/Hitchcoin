@@ -11,24 +11,25 @@ import Amplify, { Storage } from 'aws-amplify'
 import { S3Image } from 'aws-amplify';
 //Auth
 import Auth from '@aws-amplify/auth';
+import { IDENTITY_POOL_ID, AWS_REGION, USER_POOL_ID, USER_POOL_WEB_CLIENT_ID, BUCKET_ARN } from '@env';
 //Amplify.configure('./aws-exports');
 Auth.configure({
         // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-        identityPoolId: '---YOUR IDENTITY POOL ID GOES HERE---',  
+        identityPoolId: IDENTITY_POOL_ID,
         // REQUIRED - Amazon Cognito Region
-        region: '---YOUR REGION GOES HERE---',
+        region: AWS_REGION,
         // OPTIONAL - Amazon Cognito User Pool ID
-        userPoolId: '---YOUR USER POOL ID GOES HERE---',
+        userPoolId: USER_POOL_ID,
         // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-        userPoolWebClientId: '---YOUR USER POOL WEB CLIENT ID GOES HERE---',
+        userPoolWebClientId: USER_POOL_WEB_CLIENT_ID,
         // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
         mandatorySignIn: true,      
 });
 
 Storage.configure({
-    bucket: '---YOUR BUCKET ARN GOES HERE---',//Your bucket ARN;
-    region: '---YOUR REGION GOES HERE---',//Specify the region your bucket was created in;
-    identityPoolId: '---YOUR IDENTITY POOL ID GOES HERE---'//Specify your identityPoolId
+    bucket: BUCKET_ARN, //Your bucket ARN;
+    region: AWS_REGION, //Specify the region your bucket was created in;
+    identityPoolId: IDENTITY_POOL_ID //Specify your identityPoolId
 });
 
 const styles = require('./ProfileStyles');
