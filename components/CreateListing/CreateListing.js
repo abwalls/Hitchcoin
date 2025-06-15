@@ -8,7 +8,7 @@ import {
   View } from 'react-native';
 
 //GraphQL 
-import Amplify, { API, graphqlOperation } from "aws-amplify";
+
 import { AUTH_TYPE } from "aws-appsync/lib/link/auth-link";
 import { createRides } from '../../src/graphql/mutations';
 import { listRides } from '../../src/graphql/queries';
@@ -19,26 +19,8 @@ import AppSync from '../../src/aws-exports.js';
 import AWSAppSyncClient from "aws-appsync";
 
 //Auth
-import Auth from '@aws-amplify/auth';
+import { Auth } from '../../awsConfig';
 
-Auth.configure({
-        // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-        identityPoolId: '---YOUR IDENTITY POOL ID GOES HERE---',  
-        // REQUIRED - Amazon Cognito Region
-        region: '---YOUR AWS REGION GOES HERE---',
-        // OPTIONAL - Amazon Cognito User Pool ID
-        userPoolId: '---YOUR USER POOL ID GOES HERE---7',
-        // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-        userPoolWebClientId: 'USER POOL WEB CLIENT ID GOES HERE',
-        // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
-        mandatorySignIn: true,      
-});
-
-Amplify.configure({
-  API: {
-    graphql_endpoint: 'https://kldld5zlbrfyvo2nlibxi2cu3e.appsync-api.us-east-1.amazonaws.com/graphql'
-  }
-});
 
 //Configure AppSync
 const client = new AWSAppSyncClient({
