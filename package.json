@@ -15,18 +15,18 @@
     "aws-appsync": "^1.4.0",
     "aws-appsync-react": "^1.2.0",
     "aws-sdk": "^2.354.0",
-    "expo": "^31.0.2",
+    "expo": "^49.0.0",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
-    "react": "16.5.0",
+    "react": "18.2.0",
     "react-apollo": "^2.3.2",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "react-native": "^0.72.6",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
     "react-native-safe-area-context": "^5.4.1",
     "react-native-screens": "^3.20.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "^9.0.0"
   }
 }
