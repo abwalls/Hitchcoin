@@ -14,7 +14,7 @@ export default class Menu extends Component {
   render() {
     return(
        <KeyboardAvoidingView
-        behaviour = 'padding'
+        behavior = 'padding'
         style = {styles.button_container}
        >
         <ScrollView

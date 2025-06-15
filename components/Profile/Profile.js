@@ -39,7 +39,7 @@ export default class Profile extends Component {
     let pic2 = { uri: '---Fetch S3 file here---' };
     return (
        <KeyboardAvoidingView
-        behaviour = 'padding'
+        behavior = 'padding'
         style = {styles.profile_container}
        >
         <ScrollView

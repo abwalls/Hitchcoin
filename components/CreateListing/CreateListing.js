@@ -84,7 +84,7 @@ constructor(props) {
   render() {
     return (
        <KeyboardAvoidingView
-        behaviour = 'padding'
+        behavior = 'padding'
         style = {styles.signup_container}
        >
         <ScrollView
