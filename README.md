@@ -2,6 +2,7 @@
 Ridesharing application built in the AWS cloud using React Native for Android/iOS support (Work In Progress)
 
 Configuring Application with your AWS cloud resources
+The repository includes example configuration files `aws-exports.example.js` and `src/aws-exports.example.js`. Copy these to `aws-exports.js` and `src/aws-exports.js` with your AWS details. These filenames are gitignored so credentials are not committed.
 Several sections of the code have been removed that are used to configure the application to specific AWS resources such as user pools and DynamoDB. Using the AWS console you can auto generate your own `aws-exports.js` file and link it to the application or you can manually configure sections in the code in the following sections:
 
 To generate the `aws-exports.js` file with the Amplify CLI:

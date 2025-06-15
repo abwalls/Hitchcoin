@@ -16,10 +16,10 @@ import Menu from './components/Menu/Menu';
 //import * as AWS from 'aws-sdk';
 //import { Rehydrated } from 'aws-appsync-react';
 import { AUTH_TYPE } from "aws-appsync/lib/link/auth-link";
-import AppSync from './aws-exports.js';
+import AppSync from './aws-exports.example.js';
 
 //AWS Config 
-import awsconfig from './aws-exports';
+import awsconfig from './aws-exports.example';
 
 Analytics.configure(awsconfig);
 Auth.configure({
