@@ -92,7 +92,7 @@ constructor(props) {
     return (
      <ApolloProvider client = { apolloClient }>
        <KeyboardAvoidingView
-        behaviour = 'padding'
+        behavior = 'padding'
         style = {styles.signup_container}
        >
         <ScrollView
