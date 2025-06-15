@@ -1,10 +1,10 @@
 import React from 'react';
-import { Linking, Button, StyleSheet, Text, View } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import { withAuthenticator } from 'aws-amplify-react-native'
 import Analytics from '@aws-amplify/analytics';
 import Amplify, { API } from "aws-amplify";
-import { createSwitchNavigator } from 'react-navigation';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Profile from './components/Profile/Profile';
 import Listings from './components/Listings/Listings';
 import CreateListing from './components/CreateListing/CreateListing';
@@ -35,32 +35,28 @@ Auth.configure({
         mandatorySignIn: true,      
 });
 
-const MainNavigator = createSwitchNavigator({
-  Menu: {screen: Menu},
-  CreateListing: { screen: CreateListing},
-  Profile: { screen: Profile },
-  Listings: { screen: Listings },
-  initialRouteName: 'Menu',
-});
+const Stack = createNativeStackNavigator();
+
+function MainNavigator() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Menu" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Menu" component={Menu} />
+        <Stack.Screen name="CreateListing" component={CreateListing} />
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Listings" component={Listings} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 class App extends React.Component {
     render() {
       return (
-        <View style={styles.container}>
-          <MainNavigator/>
-        </View>
+        <MainNavigator/>
       );
     }
 }
 
 export default withAuthenticator(App);
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
