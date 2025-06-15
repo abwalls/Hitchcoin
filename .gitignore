@@ -1,0 +1,9 @@
+# Node modules
+node_modules/
+
+# Expo/React Native build artifacts
+.expo/
+*.log
+
+# macOS system files
+.DS_Store
