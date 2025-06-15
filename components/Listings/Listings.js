@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   KeyboardAvoidingView,
-  ListView,
+  FlatList,
   ScrollView,
   Text,
   TextInput,
@@ -78,8 +78,8 @@ constructor(props) {
   
   async listRideReqs(){
     try{
-       client.query({query: gql(listRides)}).then(({ data: { listRides } })  => {
-       console.log(listRides.items);});
+       const result = await client.query({query: gql(listRides)});
+       this.setState({ requests: result.data.listRides.items });
     }
     catch(err){
        alert(err);
@@ -92,7 +92,7 @@ constructor(props) {
     return (
      <ApolloProvider client = { apolloClient }>
        <KeyboardAvoidingView
-        behaviour = 'padding'
+        behavior = 'padding'
         style = {styles.signup_container}
        >
         <ScrollView
@@ -110,9 +110,13 @@ constructor(props) {
                 SHOW REQUESTS
               </Text>
             </TouchableOpacity>
-          <View>
-            <Text>{this.state.requests}</Text>
-          </View>
+          <FlatList
+            data={this.state.requests}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({item}) => (
+              <Text>{`${item.Location} -> ${item.Destination}`}</Text>
+            )}
+          />
           </View>
           <View style = {styles.signup_actions_container}>
             <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Menu')}>
