@@ -16,7 +16,7 @@ import { listRides } from '../../src/graphql/queries';
 import { getRides } from '../../src/graphql/queries';
 import * as queries from '../../src/graphql/queries';
 import gql from 'graphql-tag';
-import AppSync from '../../src/aws-exports.js';
+import AppSync from '../../src/aws-exports.example.js';
 import AWSAppSyncClient from "aws-appsync";
 import { Connect } from "aws-amplify-react-native";
 import { print as gqlToString } from 'graphql/language';

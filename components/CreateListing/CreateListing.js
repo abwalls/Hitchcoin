@@ -15,7 +15,7 @@ import { listRides } from '../../src/graphql/queries';
 import * as queries from '../../src/graphql/queries';
 import * as mutations from '../../src/graphql/mutations';
 import gql from 'graphql-tag';
-import AppSync from '../../src/aws-exports.js';
+import AppSync from '../../src/aws-exports.example.js';
 import AWSAppSyncClient from "aws-appsync";
 
 //Auth
