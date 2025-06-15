@@ -22,13 +22,17 @@ import awsconfig from './aws-exports';
 
 Analytics.configure(awsconfig);
 
-const MainNavigator = createSwitchNavigator({
-  Menu: {screen: Menu},
-  CreateListing: { screen: CreateListing},
-  Profile: { screen: Profile },
-  Listings: { screen: Listings },
-  initialRouteName: 'Menu',
-});
+const MainNavigator = createSwitchNavigator(
+  {
+    Menu: { screen: Menu },
+    CreateListing: { screen: CreateListing },
+    Profile: { screen: Profile },
+    Listings: { screen: Listings }
+  },
+  {
+    initialRouteName: 'Menu'
+  }
+);
 
 class App extends React.Component {
     render() {
