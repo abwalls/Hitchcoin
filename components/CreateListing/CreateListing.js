@@ -36,7 +36,7 @@ Auth.configure({
 
 Amplify.configure({
   API: {
-    graphql_endpoint: 'https://kldld5zlbrfyvo2nlibxi2cu3e.appsync-api.us-east-1.amazonaws.com/graphql'
+    graphql_endpoint: '---YOUR GRAPHQL ENDPOINT GOES HERE---'
   }
 });
 

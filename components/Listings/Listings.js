@@ -51,8 +51,8 @@ Amplify.configure({
 
 //Configure AppSync
 const client = new AWSAppSyncClient({
-    url: "https://kldld5zlbrfyvo2nlibxi2cu3e.appsync-api.us-east-1.amazonaws.com/graphql",
-    region: "us-east-1",
+    url: "---YOUR APP SYNC URL GOES HERE---",
+    region: "---YOUR APPSYNC REGION GOES HERE---",
     auth: {
          //Cognito User Pools using AWS Amplify
          type: AUTH_TYPE.AMAZON_COGNITO_USER_POOLS,
